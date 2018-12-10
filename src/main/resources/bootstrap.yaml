@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    consul:
+      host: 192.168.99.100
+      #host: localhost
+      port: 31085
+      discovery:
+        enabled: true
+        register: true
+        #instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        healthCheckPath: ${server.servlet.context-path}${management.endpoints.web.base-path}/health
+        tags: gateway

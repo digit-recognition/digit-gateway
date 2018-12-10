@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: digit-gateway
+
+server:
+  port: 8080
+  servlet:
+    context-path: /digit-gateway
+
+management:
+  security:
+    enabled: false
+  #server:
+  #  servlet:
+  #    context-path: /management
+  endpoints:
+    enabled-by-default: true
+    web:
+      base-path: /management
+      exposure:
+        include: "*"
