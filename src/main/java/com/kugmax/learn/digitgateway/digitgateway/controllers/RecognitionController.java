@@ -36,9 +36,11 @@ public class RecognitionController {
             fos.write(decodedData);
 
 
-            String path = saveToMNIST(decodedData);
+//            String path = saveToMNIST(decodedData);
+            String bytes = saveToMNIST(decodedData);
 
-            int digit = client.recognize(path);
+//            int digit = client.recognizeByPath(path);
+            int digit = client.recognizeByBytes(bytes);
             System.out.println(digit);
 
             return String.valueOf(digit);
@@ -59,12 +61,25 @@ public class RecognitionController {
 
         BufferedImage image = ImageIO.read(new File("gray.png"));
 
-        File toRecognize =  new File("gray2.png");
+        final ByteArrayOutputStream os = new ByteArrayOutputStream();
 
-        ImageIO.write(RecognitionController.criaImagemCinza(image), "png", toRecognize);
-
-        return toRecognize.getAbsolutePath();
+        ImageIO.write(RecognitionController.criaImagemCinza(image), "png", os);
+        return Base64.encodeBase64String(os.toByteArray());
     }
+
+//    private String saveToMNIST(byte[] decodedData) throws Exception {
+//        FileOutputStream fos = new FileOutputStream("gray.png");
+//        fos.write(decodedData);
+//        fos.close();
+//
+//        BufferedImage image = ImageIO.read(new File("gray.png"));
+//
+//        File toRecognize =  new File("gray2.png");
+//
+//        ImageIO.write(RecognitionController.criaImagemCinza(image), "png", toRecognize);
+//
+//        return toRecognize.getAbsolutePath();
+//    }
 
     public static BufferedImage criaImagemCinza(BufferedImage imgJPEG) {
         // Create a new buffer to BYTE_GRAY
