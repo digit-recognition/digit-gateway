@@ -58,13 +58,13 @@
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
 
+		<!--grpc-->
 		<dependency>
 			<groupId>io.grpc</groupId>
 			<artifactId>grpc-protobuf</artifactId>
@@ -75,24 +75,25 @@
 			<artifactId>grpc-stub</artifactId>
 			<version>${grpc.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-netty</artifactId>
+			<version>${grpc.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>io.grpc</groupId>
 			<artifactId>grpc-netty-shaded</artifactId>
 			<version>1.17.1</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.xolstice.maven.plugins</groupId>
 			<artifactId>protobuf-maven-plugin</artifactId>
 			<version>0.6.1</version>
 		</dependency>
-
 		<dependency>
-			<groupId>com.github.saturnism.spring-boot-starter-grpc</groupId>
-			<artifactId>grpc-client-starter</artifactId>
-			<version>master</version>
+			<groupId>io.github.lognet</groupId>
+			<artifactId>grpc-spring-boot-starter</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 	</dependencies>
 

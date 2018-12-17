@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+package com.kugmax.learn.digitgateway.digitgateway.api;
+
+message SaveAndRecognizeResponse {
+    int32 value = 1;
+}
+
+message SaveAndRecognizeRequest {
+    string bytes = 1;
+}
+
+service DigitAPI {
+    rpc saveAndRecognize(SaveAndRecognizeRequest) returns (SaveAndRecognizeResponse) {}
+}

@@ -19,3 +19,6 @@ management:
       base-path: /management
       exposure:
         include: "*"
+
+grpc:
+  port: 6565
