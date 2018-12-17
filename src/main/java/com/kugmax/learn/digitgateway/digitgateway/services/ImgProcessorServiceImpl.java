@@ -12,10 +12,13 @@ import java.io.*;
 public class ImgProcessorServiceImpl implements ImgProcessorService {
     @Override
     public String makeImgGray(String image) throws Exception {
+        image = image.substring("data:image/png;base64,".length());
         byte[] contentData = image.getBytes();
         byte[] decodedData = Base64.decodeBase64(contentData);
 
-        BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(decodedData));
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(decodedData);
+
+        BufferedImage bufferedImage = ImageIO.read(byteArrayInputStream);
 
         final ByteArrayOutputStream os = new ByteArrayOutputStream();
 
