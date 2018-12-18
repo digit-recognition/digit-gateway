@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kugmax.learn.digit-gateway</groupId>
-	<artifactId>digit-gateway</artifactId>
+	<artifactId>dr-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>digit-gateway</name>
