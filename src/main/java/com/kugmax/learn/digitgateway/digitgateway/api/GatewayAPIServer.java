@@ -17,6 +17,8 @@ public class GatewayAPIServer extends DigitAPIGrpc.DigitAPIImplBase {
     @Override
     public void saveAndRecognize(SaveAndRecognizeRequest request, StreamObserver<SaveAndRecognizeResponse> responseObserver) {
 
+        System.out.println("in saveAndRecognize");
+
         try {
             String grayImg = imgProcessorService.makeImgGray(request.getBytes());
 

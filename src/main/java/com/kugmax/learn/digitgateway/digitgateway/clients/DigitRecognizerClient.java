@@ -15,7 +15,7 @@ public class DigitRecognizerClient {
     public int recognizeByPath(String filePath) {
 
 //        TODO: need descovery
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("dr-fastai", 50051)
                 .usePlaintext()
                 .build();
 
@@ -35,7 +35,7 @@ public class DigitRecognizerClient {
 
     public int recognizeByBytes(String bytes) {
 //        TODO: need descovery
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("dr-fastai", 50051)
                 .usePlaintext()
                 .build();
 
