@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: kugmax/dr-gateway
-  tag: 2 
+  tag: 3 
   pullPolicy: IfNotPresent
 
 nameOverride: ""
